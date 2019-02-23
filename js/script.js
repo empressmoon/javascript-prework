@@ -10,6 +10,8 @@ function clearMessages(){
 
 var computerMove, randomNumber;
 
+// Computer move
+
 randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log(('wylosowana liczba to: ' + randomNumber));
 if (randomNumber == '1') {
