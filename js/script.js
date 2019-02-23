@@ -8,14 +8,15 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
 
-var computerMove, playerMove;
+var computerMove, randomNumber;
 
-
-highlightBlock('Mhaz}dPies%2|2Jz#XEO');
-computerMove = 'kamień';
-highlightBlock('rw}O3R,Wh])%.ZZBm=28');
-printMessage(('Zagrałem ' + computerMove + '! Jeśli Twój ruch to papier, to wygrywasz!'));
-highlightBlock('~XV*B)zQ{o{gY[AsMJuJ');
-playerMove = 'papier';
-highlightBlock('9,Le;%IaD;QSCuF^`QWn');
-printMessage(('Zagrałem ' + playerMove + '! Wygrałam'));
+randomNumber = Math.floor(Math.random() * 3 + 1);
+console.log(('wylosowana liczba to: ' + randomNumber));
+if (randomNumber == '1') {
+  computerMove = 'kamień';
+} else if (randomNumber == '2') {
+  computerMove = 'papier';
+} else if (randomNumber == '3') {
+  computerMove = 'nożyce';
+}
+printMessage(('Mój ruch: ' + computerMove));
