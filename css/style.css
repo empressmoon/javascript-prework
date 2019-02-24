@@ -7,7 +7,7 @@
 body {
   margin: 0;
   background: #eccc68;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.7;
   font-family: "Inconsolata", monospace;
   color: #222f3e;
@@ -42,8 +42,8 @@ body {
 }
 
 .btn:hover {
-  color: #5352ed;
-  border-color: #5352ed;
+  color: #222f3e;
+  border-color: #222f3e;
   border-style: dashed;
 }
 

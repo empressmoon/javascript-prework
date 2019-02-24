@@ -17,7 +17,7 @@ $color-three: #ffda79;
 body {
      margin: 0;
      background: #eccc68;
-     font-size: 14px;
+     font-size: 12px;
      line-height: 1.7;
      font-family: $font-text;
      color: $font-color;
@@ -48,8 +48,8 @@ body {
   outline:none;
 
   &:hover {
-    color: #5352ed;
-    border-color: #5352ed;
+    color: $font-color;
+    border-color: $font-color;
     border-style: dashed;
   }
 }

@@ -11,12 +11,9 @@ function clearMessages(){
 
 var buttonName, buttonTest, buttonPaper, buttonRock, buttonScissors;
 
-
 buttonRock = document.getElementById('button-rock');
 buttonPaper = document.getElementById('button-paper');
 buttonScissors = document.getElementById('button-scissors');
-
-
 
 function buttonClicked(buttonName) {
   clearMessages();
