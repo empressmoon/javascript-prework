@@ -1,0 +1,83 @@
+/* Variables */
+/* Global */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #eccc68;
+  font-size: 14px;
+  line-height: 1.7;
+  font-family: "Inconsolata", monospace;
+  color: #222f3e;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.buttons-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.btn {
+  background-color: inherit;
+  border: 5px solid #ff6b81;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  color: #ff6b81;
+  font-size: 64px;
+  cursor: pointer;
+  margin: 40px;
+  outline: none;
+}
+
+.btn:hover {
+  color: #5352ed;
+  border-color: #5352ed;
+  border-style: dashed;
+}
+
+.result {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+  text-align: center;
+}
+
+.game {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.game-title {
+  margin: 0 20px 0 0;
+}
+
+.game-rules {
+  margin: 0 0 0 20px;
+}
+
+p {
+  margin: 0;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */

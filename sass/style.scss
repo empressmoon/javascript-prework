@@ -1,0 +1,84 @@
+/* Variables */
+
+$font-text: 'Inconsolata', monospace;
+$font-header: 'Signika', sans-serif;
+
+$font-color: #222f3e;
+$color-one: #82ccdd;
+$color-two: #ff6b6b;
+$color-three: #ffda79;
+
+/* Global */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+ }
+
+body {
+     margin: 0;
+     background: #eccc68;
+     font-size: 14px;
+     line-height: 1.7;
+     font-family: $font-text;
+     color: $font-color;
+}
+
+.container {
+    max-width: 1140px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  background-color: inherit;
+  border: 5px solid #ff6b81;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  color: #ff6b81;
+  font-size: 64px;
+  cursor: pointer;
+  margin: 40px;
+  outline:none;
+
+  &:hover {
+    color: #5352ed;
+    border-color: #5352ed;
+    border-style: dashed;
+  }
+}
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+}
+
+.game-title {
+  margin: 0 20px 0 0;
+}
+
+.game-rules {
+  margin: 0 0 0 20px;
+}
+
+p {
+  margin: 0;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: bold;
+}
