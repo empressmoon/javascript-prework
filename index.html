@@ -7,21 +7,16 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<header>
+		<h1>Papier, kamień, nożyce!</h1>
+	</header>
 	<div class="container">
-		<div class="game">
-			<div class="game-title">
-			<h1 class="title">PAPIER,<br>KAMIEŃ,<br>NOŻYCE!</h1>
+		<div class="score-board">
+			<div id="user-label" class="badge">user</div>
+			<div id="computer-label" class="badge">comp</div>
+			<span id="user-score">0</span>:<span id="computer-score">0</span>
 		</div>
-		<div class="game-rules">
-			<h3 class="rules">+ Zasady +<h3>
-				<p>Wybierz jeden z ruchów: papier, kamień, lub nożyce.</p>
-				<p>Gracz, który pokazał silniejszy symbol, otrzymuje jeden punkt.<br>W przypadku pokazania dwóch takich samych symboli następuje remis – punktu brak.</p>
-				<p>Oto hierarchia symboli:</p>
-				<p>+ nożyce są silniejsze od papieru, ponieważ go tną,<br>
-					+ kamień jest silniejszy od nożyc, ponieważ je tępi,<br>
-					+ papier jest silniejszy od kamienia, ponieważ go owija.</p>
-		</div>
-	</div>
+
 		<div class ="buttons-wrapper" id="buttons">
       <button class="btn" id="button-rock"><i class="far fa-hand-rock"></i></button>
       <button class="btn" id="button-paper"><i class="far fa-hand-paper"></i></button>
@@ -30,9 +25,23 @@
 		<div class="result">
 			<div class="message" id="messages"></div>
 		</div>
-		<div id="result"></div>
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>
+
+<!--<div class="game">
+	<div class="game-title">
+	<h1 class="title">PAPIER,<br>KAMIEŃ,<br>NOŻYCE!</h1>
+</div>
+<div class="game-rules">
+	<h3 class="rules">+ Zasady +<h3>
+		<p>Wybierz jeden z ruchów: papier, kamień, lub nożyce.</p>
+		<p>Gracz, który pokazał silniejszy symbol, otrzymuje jeden punkt.<br>W przypadku pokazania dwóch takich samych symboli następuje remis – punktu brak.</p>
+		<p>Oto hierarchia symboli:</p>
+		<p>+ nożyce są silniejsze od papieru, ponieważ go tną,<br>
+			+ kamień jest silniejszy od nożyc, ponieważ je tępi,<br>
+			+ papier jest silniejszy od kamienia, ponieważ go owija.</p>
+</div>
+</div>-->
