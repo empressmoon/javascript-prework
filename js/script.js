@@ -8,71 +8,93 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
 
+// Get user userName
+
+var userName = prompt('hi! what\'s your name?', 'user');
+var userName_span = document.getElementById('user-name');
+console.log(userName);
+userName_span.innerHTML = userName;
+
+// Scores
+
 var userScore= 0;
 var computerScore = 0;
 var userScore_span = document.getElementById("user-score");
-var userScore_span = document.getElementById("computer-score");
+var computerScore_span = document.getElementById("computer-score");
 var scoreBoard_div = document.querySelector(".score-board");
 
-var buttonName;
+// Buttons
 
 var buttonRock = document.getElementById('button-rock');
 var buttonPaper = document.getElementById('button-paper');
 var buttonScissors = document.getElementById('button-scissors');
+var buttonName;
 
-
-buttonRock.addEventListener('click', function(){
-	buttonClicked('kamień')
-});
-buttonPaper.addEventListener('click', function(){
- buttonClicked('papier')
-});
-buttonScissors.addEventListener('click', function(){
-	buttonClicked('nożyce')
-});
-
+// Main function
 
 function buttonClicked(buttonName) {
   clearMessages();
-  console.log((buttonName + ' został kliknięty'));
+  console.log((buttonName + ' was clicked'));
 
 	var moveId, computerMove, playerMove, randomNumber;
 
 	function getMoveName(moveId) {
-	  console.log(('wywołano funkcję getMoveName z argumentem: ' + moveId));
+	  console.log(('call the function with an argument: ' + moveId));
 	  if (moveId == 1) {
-	    return 'kamień';
+	    return 'rock';
 	  } else if (moveId == 2) {
-	    return 'papier';
+	    return 'paper';
 	  } else if (moveId == 3) {
-	    return 'nożyce';
-	  } else {
-	    printMessage(('Nie znam ruchu o id ' + moveId + '. Zakładam, że chodziło o "kamień".'));
-	    return 'kamień';
+	    return 'scissors';
 	  }
 	}
+
+// Compare choices + result
 
 	function displayResult(playerMove, computerMove) {
-	  console.log(('wywołano funkcję displayResults z argumentami: ' + playerMove + ', ' + computerMove));
-	  if (playerMove == 'papier' && computerMove == 'kamień') {
-	    printMessage('Wygrywasz!');
-	  } else if (playerMove == 'kamień' && computerMove == 'nożyce') {
-	    printMessage('Wygrywasz!');
-	  } else if (playerMove == 'nożyce' && computerMove == 'papier') {
-	    printMessage('Wygrywasz!');
+	  console.log(('call the function with arguments: ' + playerMove + ', ' + computerMove));
+	  if (playerMove == 'paper' && computerMove == 'rock') {
+	    printMessage('You win!!');
+			userScore++;
+			userScore_span.innerHTML = userScore;
+	  } else if (playerMove == 'rock' && computerMove == 'scissors') {
+	    printMessage('You win!!');
+			userScore++;
+			userScore_span.innerHTML = userScore;
+	  } else if (playerMove == 'scissors' && computerMove == 'paper') {
+	    printMessage('You win ;)!');
+			userScore++;
+			userScore_span.innerHTML = userScore;
 	  } else if (playerMove == computerMove) {
-	    printMessage('Remis!');
+	    printMessage('It\'s a draw!');
 	  } else {
-	    printMessage('Przegrywasz :(');
+	    printMessage('You lose :(');
+			computerScore++;
+			computerScore_span.innerHTML = computerScore;
 	  }
-	  printMessage(('Zagrałem ' + computerMove + ', a Ty ' + playerMove));
+	  printMessage(('I throw ' + computerMove + ', you throw ' + playerMove + '.'));
 	}
 
+
+// Computer's choices
+
 	playerMove = buttonName;
-	console.log(('ruch gracza to: ' + playerMove));
+	console.log(('players move is : ' + playerMove));
 	randomNumber = Math.floor(Math.random() * 3 + 1);
-	console.log(('wylosowana liczba to: ' + randomNumber));
+	console.log(('randomly drawn number is: ' + randomNumber));
 	computerMove = getMoveName(randomNumber);
-	console.log(('ruch komputera to: ' + computerMove));
+	console.log(('computers move is: ' + computerMove));
 	displayResult(playerMove, computerMove);
 }
+
+// Player's choice
+
+buttonRock.addEventListener('click', function(){
+	buttonClicked('rock')
+});
+buttonPaper.addEventListener('click', function(){
+ buttonClicked('paper')
+});
+buttonScissors.addEventListener('click', function(){
+	buttonClicked('scissors')
+});
