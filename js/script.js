@@ -8,10 +8,9 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
 
-var buttonRound = document.getElementById('button-round');
-
 function printResult(result) {
 	var roundResult = document.getElementById('round');
+	var buttonRound = document.getElementById('button-round');
 	roundResult.style.display = 'block';
 	roundResult.innerHTML += result;
 }
@@ -22,11 +21,6 @@ function hideRoundResult() {
 	userScore_span.innerHTML = userScore;
 	computerScore = 0;
 	computerScore_span.innerHTML = computerScore;
-}
-
-function clearScore(userScore, computerScore) {
-	document.getElementById("user-score") = '0';
-	document.getElementById("computer-score") = '0';
 }
 
 // Get user userName
