@@ -15,7 +15,14 @@ body {
 
 h1 {
   text-align: center;
-  margin: 50px 0;
+  margin: 50px 0 20px 0;
+}
+
+header p {
+  text-align: center;
+  margin: 0;
+  color: #ff6b81;
+  margin-bottom: 20px;
 }
 
 .score-board {
@@ -51,9 +58,9 @@ h1 {
 }
 
 .container {
-  max-width: 1140px;
-  padding: 0 20px;
+  max-width: 940px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .buttons-wrapper {
@@ -81,31 +88,47 @@ h1 {
   border-style: dashed;
 }
 
-.result {
+.message {
+  font-size: 18px;
+  font-weight: bold;
   text-align: center;
   margin: 10px 0;
 }
 
-.message {
-  font-size: 18px;
-  font-weight: bold;
+.btn-round {
+  color: #fffff7;
+  border: 3px dashed #222f3e;
+  font-size: 22px;
+  font-family: "Inconsolata", monospace;
+  background-color: inherit;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
-/*
-.game {
-  display: flex;
-  justify-content: center;
+.btn-round:hover {
+  border: 3px dashed #fffff7;
+  color: #222f3e;
 }
 
-.game-title {
-  margin: 0 20px 0 0;
+.round {
+  display: none;
+  position: absolute;
+  width: 500px;
+  height: 150px;
+  padding: 10px  0 0 0;
+  color: #fffff7;
+  font-size: 34px;
+  text-align: center;
+  background-color: #ff6b81;
+  border: 5px solid #222f3e;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-.game-rules {
-  margin: 0 0 0 20px;
-}
-
-p {
-  margin: 0;
-}*/
 /*# sourceMappingURL=style.css.map */

@@ -9,7 +9,9 @@
 <body>
 	<header>
 		<h1>rock! paper! scissors!</h1>
+		<p>+ make 3 wins to win a round +</p>
 	</header>
+
 	<div class="container">
 		<div class="score-board">
 			<div id="user-label" class="badge"><span id="user-name">user</span></div>
@@ -22,8 +24,10 @@
       <button class="btn" id="button-paper"><i class="far fa-hand-paper"></i></button>
       <button class="btn" id="button-scissors"><i class="far fa-hand-scissors"></i></button>
     </div>
-		<div class="result">
 			<div class="message" id="messages"></div>
+		<div class="round" id="round">
+			<h2 class='result' id='round-result'></h2>
+			<button class="btn-round" id="button-round" onclick="hideRoundResult()">Play again?</button>
 		</div>
 	</div>
 	<script src="js/functions.js"></script>

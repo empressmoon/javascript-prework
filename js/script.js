@@ -8,6 +8,27 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
 
+var buttonRound = document.getElementById('button-round');
+
+function printResult(result) {
+	var roundResult = document.getElementById('round');
+	roundResult.style.display = 'block';
+	roundResult.innerHTML += result;
+}
+
+function hideRoundResult() {
+	document.getElementById('round').style.visibility = 'hidden';
+	userScore = 0;
+	userScore_span.innerHTML = userScore;
+	computerScore = 0;
+	computerScore_span.innerHTML = computerScore;
+}
+
+function clearScore(userScore, computerScore) {
+	document.getElementById("user-score") = '0';
+	document.getElementById("computer-score") = '0';
+}
+
 // Get user userName
 
 var userName = prompt('hi! what\'s your name?', 'user');
@@ -17,7 +38,7 @@ userName_span.innerHTML = userName;
 
 // Scores
 
-var userScore= 0;
+var userScore = 0;
 var computerScore = 0;
 var userScore_span = document.getElementById("user-score");
 var computerScore_span = document.getElementById("computer-score");
@@ -34,12 +55,12 @@ var buttonName;
 
 function buttonClicked(buttonName) {
   clearMessages();
-  console.log((buttonName + ' was clicked'));
+  console.log(buttonName + ' was clicked');
 
 	var moveId, computerMove, playerMove, randomNumber;
 
 	function getMoveName(moveId) {
-	  console.log(('call the function with an argument: ' + moveId));
+	  console.log('call the function with an argument: ' + moveId);
 	  if (moveId == 1) {
 	    return 'rock';
 	  } else if (moveId == 2) {
@@ -52,7 +73,7 @@ function buttonClicked(buttonName) {
 // Compare choices + result
 
 	function displayResult(playerMove, computerMove) {
-	  console.log(('call the function with arguments: ' + playerMove + ', ' + computerMove));
+	  console.log('call the function with arguments: ' + playerMove + ', ' + computerMove);
 	  if (playerMove == 'paper' && computerMove == 'rock') {
 	    printMessage('You win!!');
 			userScore++;
@@ -72,19 +93,28 @@ function buttonClicked(buttonName) {
 			computerScore++;
 			computerScore_span.innerHTML = computerScore;
 	  }
-	  printMessage(('I throw ' + computerMove + ', you throw ' + playerMove + '.'));
+	  printMessage('I throw ' + computerMove + ', you throw ' + playerMove + '.');
 	}
 
+	function roundEndAlert(userScore, computerScore) {
+		console.log('call the function with arguments: ' + userScore + ',' + computerScore);
+		if (userScore == '3') {
+			printResult('You WON this round!');
+		} else if (computerScore == '3') {
+			printResult('You LOST this round :(');
+		}
+	}
 
 // Computer's choices
 
 	playerMove = buttonName;
-	console.log(('players move is : ' + playerMove));
+	console.log('players move is : ' + playerMove);
 	randomNumber = Math.floor(Math.random() * 3 + 1);
-	console.log(('randomly drawn number is: ' + randomNumber));
+	console.log('randomly drawn number is: ' + randomNumber);
 	computerMove = getMoveName(randomNumber);
-	console.log(('computers move is: ' + computerMove));
+	console.log('computers move is: ' + computerMove);
 	displayResult(playerMove, computerMove);
+	roundEndAlert(userScore, computerScore);
 }
 
 // Player's choice
