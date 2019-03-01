@@ -7,6 +7,7 @@ function printMessage(msg){
 function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
+
 //User name
 const userName_span = document.getElementById('user-name');
 
