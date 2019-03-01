@@ -1,5 +1,5 @@
 function printMessage(msg){
-	var div = document.createElement('div');
+	const div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
@@ -7,13 +7,16 @@ function printMessage(msg){
 function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
+// Add round result message on a pop-up div
 
 function printResult(result) {
-	var roundResult = document.getElementById('round');
-	var buttonRound = document.getElementById('button-round');
+	const roundResult = document.getElementById('round');
+	const buttonRound = document.getElementById('button-round');
 	roundResult.style.display = 'block';
 	roundResult.innerHTML += result;
 }
+
+// Hide pop-up div with round result and clear score
 
 function hideRoundResult() {
 	document.getElementById('round').style.visibility = 'hidden';
@@ -23,27 +26,27 @@ function hideRoundResult() {
 	computerScore_span.innerHTML = computerScore;
 }
 
-// Get user userName
+// Get user name
 
-var userName = prompt('hi! what\'s your name?', 'user');
-var userName_span = document.getElementById('user-name');
+let userName = prompt('hi! what\'s your name?', 'user');
+const userName_span = document.getElementById('user-name');
 console.log(userName);
 userName_span.innerHTML = userName;
 
 // Scores
 
-var userScore = 0;
-var computerScore = 0;
-var userScore_span = document.getElementById("user-score");
-var computerScore_span = document.getElementById("computer-score");
-var scoreBoard_div = document.querySelector(".score-board");
+let userScore = 0;
+let computerScore = 0;
+const userScore_span = document.getElementById("user-score");
+const computerScore_span = document.getElementById("computer-score");
+const scoreBoard_div = document.querySelector(".score-board");
 
 // Buttons
 
-var buttonRock = document.getElementById('button-rock');
-var buttonPaper = document.getElementById('button-paper');
-var buttonScissors = document.getElementById('button-scissors');
-var buttonName;
+const buttonRock = document.getElementById('button-rock');
+const buttonPaper = document.getElementById('button-paper');
+const buttonScissors = document.getElementById('button-scissors');
+let buttonName;
 
 // Main function
 
@@ -51,7 +54,10 @@ function buttonClicked(buttonName) {
   clearMessages();
   console.log(buttonName + ' was clicked');
 
-	var moveId, computerMove, playerMove, randomNumber;
+	let moveId;
+	let computerMove;
+	let playerMove;
+	let randomNumber;
 
 	function getMoveName(moveId) {
 	  console.log('call the function with an argument: ' + moveId);
@@ -64,7 +70,7 @@ function buttonClicked(buttonName) {
 	  }
 	}
 
-// Compare choices + result
+	// Compare choices + result
 
 	function displayResult(playerMove, computerMove) {
 	  console.log('call the function with arguments: ' + playerMove + ', ' + computerMove);
@@ -90,11 +96,15 @@ function buttonClicked(buttonName) {
 	  printMessage('I throw ' + computerMove + ', you throw ' + playerMove + '.');
 	}
 
+	// Round result
+
 	function roundEndAlert(userScore, computerScore) {
 		console.log('call the function with arguments: ' + userScore + ',' + computerScore);
 		if (userScore == '3') {
+			console.log(userName + ' won this round');
 			printResult('You WON this round!');
 		} else if (computerScore == '3') {
+			console.log('Computer won this round');
 			printResult('You LOST this round :(');
 		}
 	}
